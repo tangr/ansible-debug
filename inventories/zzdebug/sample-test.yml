@@ -1,6 +1,6 @@
 zzdebug:
   vars:
-    debug_name: "test_inventories"
+    debug_name: "in inventories"
 
   hosts:
     test-node1:

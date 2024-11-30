@@ -5,7 +5,7 @@
   gather_facts: no
 
   vars:
-    debug_name: "test_playbook"
+    debug_name: "in playbook"
 
   roles:
     - role: zzdebug
