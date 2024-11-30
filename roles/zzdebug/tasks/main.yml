@@ -2,3 +2,12 @@
 - name: Display Debug msg
   debug:
     msg: "debug_name: {{ debug_name }}"
+
+- name: Show all variables
+  debug:
+    var: debug_name
+
+- name: Check inventory variable and override if needed
+  set_fact:
+    debug_name: "{{ hostvars[inventory_hostname].debug_name | default(debug_name) }}"
+  when: hostvars[inventory_hostname].debug_name is defined
