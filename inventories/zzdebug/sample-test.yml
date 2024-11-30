@@ -4,5 +4,5 @@ zzdebug:
 
   hosts:
     test-node1:
-      ansible_host: 172.25.49.101
+      ansible_host: 127.0.0.1
       ansible_python_interpreter: /usr/bin/python2.7
