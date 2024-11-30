@@ -1,0 +1,10 @@
+- hosts: all
+  connection: local
+  gather_facts: False
+
+  vars:
+    debug_name: "in playbook"
+
+  tasks:
+    - debug: var=debug_name
+    - debug: msg="{{ debug_name }}"
