@@ -2,6 +2,7 @@
 - name: Deploy zzdebug
   hosts: zzdebug
   become: true
+  gather_facts: no
 
   vars:
     debug_name: "test_playbook"
