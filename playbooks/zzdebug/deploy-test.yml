@@ -1,0 +1,10 @@
+---
+- name: Deploy zzdebug
+  hosts: zzdebug
+  become: true
+
+  vars:
+    debug_name: "test_playbook"
+
+  roles:
+    - role: zzdebug

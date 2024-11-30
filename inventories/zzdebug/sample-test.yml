@@ -1,0 +1,7 @@
+zzdebug:
+  vars:
+    debug_name: test_inventories
+
+  hosts:
+    test-node1:
+      ansible_host: 127.0.0.1

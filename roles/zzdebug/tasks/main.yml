@@ -1,0 +1,4 @@
+---
+- name: Display Debug msg
+  debug:
+    msg: "debug_name: {{ debug_name }}"
