@@ -1,9 +1,7 @@
-- hosts: all
+- name: Deploy zzdebug
+  hosts: all
   connection: local
   gather_facts: False
-
-  vars:
-    debug_name: "in playbook"
 
   tasks:
     - debug: var=debug_name
