@@ -4,8 +4,5 @@
   become: true
   gather_facts: no
 
-  vars:
-    debug_name: "in playbook"
-
   roles:
     - role: zzdebug
