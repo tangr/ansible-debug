@@ -6,3 +6,11 @@
   tasks:
     - debug: var=debug_name
     - debug: msg="{{ debug_name }}"
+
+    - name: Debug variable
+      debug:
+        var: debug_name
+
+    - name: Debug message
+      debug:
+        msg: "{{ debug_name }}"
