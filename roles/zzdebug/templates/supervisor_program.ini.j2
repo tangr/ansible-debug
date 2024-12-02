@@ -1,0 +1,24 @@
+[program:{{ supervisor_software_name }}]
+command={{ supervisor_supervisor_command }}
+process_name=%(program_name)s
+numprocs=1
+user={{ supervisor_user }}
+{% if supervisor_environment and supervisor_environment|length > 0 %}
+environment={% for key, value in supervisor_environment.items() %}{{key}}="{{value}}"{% if not loop.last %},{% endif %}{% endfor +%}
+{% else %}
+;environment=A=1,B=2
+{% endif %}
+directory={{ supervisor_symlink_path }}
+redirect_stderr=true
+stdout_logfile_maxbytes=200MB
+stdout_logfile_backups=3
+stdout_events_enabled=false
+autostart=true
+autorestart=true
+startsecs=2
+startretries=3
+exitcodes=0
+stopsignal=TERM
+stopwaitsecs=10
+stdout_logfile=/data0/logs/%(program_name)s.log
+stderr_logfile=/data0/logs/%(program_name)s.log
