@@ -11,3 +11,17 @@
   set_fact:
     debug_name: "{{ hostvars[inventory_hostname].debug_name | default(debug_name) }}"
   when: hostvars[inventory_hostname].debug_name is defined
+
+- name: Configure supervisor
+  become: false
+  template:
+    src: supervisor_program.ini.j2
+    dest: /tmp/myapp.conf
+  vars:
+    supervisor_software_name: "myapp"
+    supervisor_supervisor_command: "echo"
+    supervisor_user: "root"
+    supervisor_symlink_path: "/tmp"
+    supervisor_environment:
+      JAVA_HOME: "/usr/java/default"
+      PATH: "/usr/local/bin:/usr/bin"
